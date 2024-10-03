@@ -1,6 +1,5 @@
 function checkAnswer() {
     const correctAnswer = "4";
-    const resFeed = document.getElementById("feedback");
 
     // ALX bot might check this
     document.querySelector('[name="quiz"]');
@@ -13,11 +12,13 @@ function checkAnswer() {
         }
     }
 
-    if(userAnswer === correctAnswer) {
-        resFeed.innerText = "Correct! Well done.";
+    if (userAnswer === correctAnswer) {
+        document.getElementById("feedback").textContent = "Correct! Well done.";
     } else {
-        resFeed.innerText = "That's incorrect. Try again!";
+        document.getElementById("feedback").textContent = "That's incorrect. Try again!";
     }
 }
 
-document.getElementById("submit-answer").addEventListener("click",  checkAnswer);
+
+const submitButton = document.getElementById("submit-answer");
+submitButton.addEventListener("click",  checkAnswer);
